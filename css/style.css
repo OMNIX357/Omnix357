@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("./keyframes.css");
+
+body,
+html {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+/* Фон */
+
+.bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Количество фолловеров */
+
+.wrap {
+    overflow: hidden;
+    margin-top: -15px;
+    position: relative;
+    z-index: -993;
+}
+
+.frame {
+    height: 25px;
+    width: 140px;
+}
+
+/* Настройка частиц */
+
+.leaf {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--leafColor);
+    border-radius: 50%;
+    z-index: 993;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 20px;
+}
+
+.content__item {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.content__item>h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    padding: 10px;
+    display: inline-flex;
+    border-radius: 5px;
+    background: linear-gradient(90deg, BurlyWood 0%, MediumSlateBlue 100%);
+    justify-content: center;
+}
+
+.link>span {
+    position: relative;
+    color: white;
+}
+
+/* Глитч анимация */
+
+.link:hover>span {
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.link:hover>span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.link:hover>span::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+/* Twitch */
+
+.twitch__link {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Youtube */
+
+.youtube {
+    display: flex;
+    justify-content: center;
+    padding: 2% 0;
+}
+
+.youtube>.link__a {
+    width: 85%;
+}
+
+.youtube__link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Discord */
+
+.discord > * {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
